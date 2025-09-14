@@ -46,20 +46,20 @@ npm run ios
 └── src
     ├── App.tsx
     ├── assets
-        └── icons
+    │   └── icons
     ├── components
-        ├── Input.tsx
-        └── Button.tsx
+    │   ├── Input.tsx
+    │   └── Button.tsx
     ├── config
-        ├── icons.ts
-        └── storageKeys.ts
+    │   ├── icons.ts
+    │   └── storageKeys.ts
     ├── helpers
-        └── PopupHelper.ts
+    │   └── PopupHelper.ts
     ├── theme
-        ├── colors.ts
-        └── matrics.ts
+    │   ├── colors.ts
+    │   └── matrics.ts
     ├── types
-        └── models
+    │   └── models
     ├── context
     │   └── AuthContext.js
     ├── navigation
