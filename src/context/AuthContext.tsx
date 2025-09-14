@@ -35,7 +35,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({children}) => {
   const [user, setUser] = useState<IAuthUser | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Load persisted user & users list
+  // Load persisted user
   useEffect(() => {
     (async () => {
       try {
@@ -78,14 +78,6 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({children}) => {
    */
   const login = useCallback<AuthContextValue['login']>(
     async (email, password) => {
-      // basic validation
-    //   const emailRegex = /[^@\s]+@[^@\s]+\.[^@\s]+/;
-    //   if (!emailRegex.test(email)) {
-    //     return {status: false, error: 'Invalid email format'};
-    //   }
-    //   if (!password) {
-    //     return {status: false, error: 'Password required'};
-    //   }
       const users = await loadAllUsers();
       const found = users.find(
         u => u.email.toLowerCase() === email.toLowerCase(),

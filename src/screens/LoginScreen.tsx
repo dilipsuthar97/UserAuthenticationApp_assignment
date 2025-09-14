@@ -14,7 +14,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import * as Yup from 'yup';
 import {RootStackParamList} from '../types/Navigation.interface';
 import {Formik} from 'formik';
-import { Popup } from '../helpers';
+import {Popup} from '../helpers';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
@@ -42,6 +42,10 @@ const LoginScreen: React.FC<Props> = ({navigation}) => {
   const {login} = useAuth();
   const [loading, setLoading] = useState(false);
 
+  /**
+   * Handle login button press
+   * @param values
+   */
   const handleLoginPress = async (values: FormValues) => {
     setLoading(true);
     const res = await login(values.email.trim(), values.password);

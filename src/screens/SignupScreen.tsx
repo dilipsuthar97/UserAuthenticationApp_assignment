@@ -14,7 +14,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../types/Navigation.interface';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
-import { Popup } from '../helpers';
+import {Popup} from '../helpers';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Signup'>;
 
@@ -48,9 +48,17 @@ const SignupScreen: React.FC<Props> = ({navigation}) => {
 
   const [loading, setLoading] = useState(false);
 
+  /**
+   * Handle signup button press
+   * @param values
+   */
   const handleSignupPress = async (values: FormValues) => {
     setLoading(true);
-    const res = await signup(values.name.trim(), values.email.trim(), values.password);
+    const res = await signup(
+      values.name.trim(),
+      values.email.trim(),
+      values.password,
+    );
     if (!res.status) {
       Popup.error(res.error || 'Signup failed');
     }
@@ -92,7 +100,11 @@ const SignupScreen: React.FC<Props> = ({navigation}) => {
               onBlur={handleBlur('password')}
               error={errors.password}
             />
-            <Button title="Signup" onPress={() => handleSubmit()} loading={loading} />
+            <Button
+              title="Signup"
+              onPress={() => handleSubmit()}
+              loading={loading}
+            />
             <Button
               variant="outline"
               title="Go to Login"

@@ -3,8 +3,12 @@ import {StyleSheet, Text, View} from 'react-native';
 import {useAuth} from '../context/AuthContext';
 import Button from '../components/Button';
 import {colors, fonts, scale} from '../theme';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/Navigation.interface';
 
-const HomeScreen: React.FC = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+const HomeScreen: React.FC<Props> = () => {
   const {user, logout} = useAuth();
   return (
     <View style={styles.container}>
