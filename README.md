@@ -2,6 +2,9 @@
 
 This sample app demonstrates a simple authentication flow using React Context API, React Navigation, and AsyncStorage.
 
+## App Video Link
+https://drive.google.com/file/d/1mAZs8x1ZHTkoVlaNIYsk7gfu491FkE36/view?usp=sharing
+
 Features:
 - Login and Signup screens with validation
 - AuthContext to manage `user`, `login`, `signup`, `logout`
