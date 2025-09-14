@@ -42,9 +42,24 @@ npm run ios
 
 ```
 .
-├── App.js
 ├── package.json
 └── src
+    ├── App.tsx
+    ├── assets
+        └── icons
+    ├── components
+        ├── Input.tsx
+        └── Button.tsx
+    ├── config
+        ├── icons.ts
+        └── storageKeys.ts
+    ├── helpers
+        └── PopupHelper.ts
+    ├── theme
+        ├── colors.ts
+        └── matrics.ts
+    ├── types
+        └── models
     ├── context
     │   └── AuthContext.js
     ├── navigation
